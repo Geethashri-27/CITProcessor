@@ -17,7 +17,7 @@ jobs:
       - uses: Geethashri-27/verilator-lint-action@v1
         id: lint
         with:
-          files: "good.sv wrong.sv"
+          files: "rtl/good.sv rtl/wrong.sv"
           severity: warning
 
       - run: echo '${{ steps.lint.outputs.result-json }}'
