@@ -1,7 +1,7 @@
 name: Test Custom Action
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   lint:
