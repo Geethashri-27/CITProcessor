@@ -8,9 +8,9 @@ module wrong (
     
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            count <= 4'b0000   
+            count <= 4'b0000;   
         end else if (en) begin
-            count <= count + 1
+            count <= count + 1;
         end
     end
 
