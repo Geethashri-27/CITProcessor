@@ -1,0 +1,23 @@
+name: Test Custom Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y verilator
+
+      - uses: Geethashri-27/verilator-lint-action@v1
+        id: lint
+        with:
+          files: "good.sv wrong.sv"
+          severity: warning
+
+      - run: echo '${{ steps.lint.outputs.result-json }}'
